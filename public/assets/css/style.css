@@ -1,0 +1,45 @@
+h2 {
+	font-size: 16px;
+}
+
+.container {
+	width:90%;
+}
+
+.panel-heading > a{
+	color:white;
+}
+
+.panel-heading {
+	height:50px;
+}
+
+.pull-right {
+	margin-right:6px;
+}
+
+#unsave-article {
+	background-color:navy;
+	outline:white;
+	border-color:darkblue;
+}
+
+#unsave-article{width:6em}
+
+#unsave-article:hover span {display:none}
+#unsave-article:hover:before {content:"Unsave"}
+
+
+.center-content {
+	text-align:center;
+}
+
+.jumbotron {
+	background-color: white;
+	border: 1px solid black;
+}
+
+h2 {
+	font-size: 36px;
+}
+
