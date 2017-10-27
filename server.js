@@ -13,7 +13,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3300;
+var PORT = var port = process.env.PORT || 3300;
 
 // Initialize Express
 var app = express();
@@ -220,22 +220,22 @@ app.get("/notes/:id", function(req, res) {
     });
 
     
-// app.get("/savednotes/id", function(req, res) {
-//   var articleId = req.params.id;
+app.get("/savednotes/id", function(req, res) {
+  var articleId = req.params.id;
 
-//   console.log(articleId);
+  console.log(articleId);
 
-//   db.Article.find( {"_id": "59f2a5fa72a95e240c55065d"})
-//   .populate("note")
-//   .then(function(dbNote) {
-//     res.json(dbNote);
-//     console.log(dbNote[0].comment);
-//   })
-//   .catch(function(err) {
-//   // If an error occurs, send it back to the client
-//     res.json(err);
-//   });
-// });
+  db.Article.find( {"_id": "59f2a5fa72a95e240c55065d"})
+  .populate("note")
+  .then(function(dbNote) {
+    res.json(dbNote);
+    console.log(dbNote);
+  })
+  .catch(function(err) {
+  // If an error occurs, send it back to the client
+    res.json(err);
+  });
+});
 
 // app.get("/savednotes/:id", function(req, res) {
 
