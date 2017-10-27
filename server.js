@@ -43,7 +43,12 @@ app.use("/", routes);
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/NYTScraper", {
+
+// MONGODB_URI: mongodb://heroku_brz1jhl4:r6iprovaqkep4efpqje52dcl2m@ds237855.mlab.com:37855/heroku_brz1jhl4
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/NYTScraper";
+
+mongoose.connect(MONGODB_URI , {
   useMongoClient: true
 });
 
