@@ -9,7 +9,11 @@ var NoteSchema = new Schema({
   // `title` is of type String
    comment: {
     type: String,     
-    },
+    },   
+    userCreated: {
+      type: Date,
+      default: Date.now
+   },
   articleId: String
 });
 

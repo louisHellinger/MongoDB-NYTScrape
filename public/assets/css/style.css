@@ -2,26 +2,39 @@ h2 {
 	font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
 	width:90%;
 }
 
-.panel-heading > a{
+.panel-heading > a {
 	color:white;
+	line-height:2;
+}
+
+#article-heading {
+	background-color: black;
+
 }
 
 .panel-heading {
-	height:50px;
+	/*padding:15px;*/
+	overflow:auto
+
 }
+
 
 .pull-right {
 	margin-right:6px;
 }
 
 #unsave-article {
-	background-color:navy;
+
 	outline:white;
-	border-color:darkblue;
+
 }
 
 #unsave-article{width:6em}
@@ -43,3 +56,47 @@ h2 {
 	font-size: 36px;
 }
 
+.comment-container {
+	padding:5px;
+	border-bottom: 1px dotted lightgrey;
+	text-transform:capitalize;
+}
+
+#delete-note{
+	/*float:right;*/
+	margin-right:10px;
+	display:inline-block;
+}
+
+.modal-header {
+	background-color: black;
+	color: white;
+}
+
+.notes-container{
+	margin-bottom:15px;
+}
+
+.btn {
+	margin:0px 0px;
+	outline-color: #fff;
+}
+
+.btn:active, .btn:hover, .btn:visited,.btn:focus {
+	outline-color: #fff;
+}
+/*.modal-body {
+	margin:20px;
+}*/
+
+.form-group {
+	padding:0px 20px;
+	margin-bottom: 10px;
+
+}
+
+.date {
+	font-size: 10px;
+	font-style:italic;
+	margin-top:5px;
+}

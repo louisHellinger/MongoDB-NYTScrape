@@ -9,10 +9,10 @@ res.refresh("/");
 
 // When you click the savenote button
 $(document).on("click", "#savenote", function() {
-  // Grab the id associated with the article from the submit button
+
   var thisId = $(this).attr("data-id");
 
-  // Run a POST request to change the note, using what's entered in the inputs
+
   $.ajax({
     method: "POST",
     url: "/articles/" + thisId,
@@ -23,14 +23,11 @@ $(document).on("click", "#savenote", function() {
     }
   })
     .done(function(data) {
-
       console.log(data); 
        $("#notes").empty();
-
+        location.reload();
     });
 
-  // Also, remove the values entered in the input and textarea for note entry
-  // $("#bodyinput").val("");
 });
 
 
@@ -85,16 +82,31 @@ $(document).on("click", "#scrape-articles", function() {
 
 $(document).on("click", "#add-note", function() {
 
-console.log($(this));
+// console.log($(this));
 
 var thisId = this.dataset.id;
 
   $.ajax({
     method: "GET",
-    url: "/savednotes/" + thisId,
-    data: {
-      _id: thisId
-    }
+    url: "/saved-notes/" + thisId   
+  }).done(function(data) {
+      // res.json(data);
+      //console.log(data);
+
+    });
+});
+
+
+$(document).on("click", "#delete-note", function() {
+
+// console.log($(this));
+
+var thisId = this.dataset.id.trim();
+$(this).parent().remove();
+
+  $.ajax({
+    method: "POST",
+    url: "/api/delete-note/" + thisId
   })
     .done(function(data) {
       // res.json(data);
@@ -102,7 +114,5 @@ var thisId = this.dataset.id;
        // $("#notes").empty();
 
     });
-
-
 });
 

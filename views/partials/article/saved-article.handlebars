@@ -1,21 +1,21 @@
-
 {{#unless unsaved}}
-<div class="panel panel-primary">
-	<div class="panel-heading">
+<div class="panel panel-default">
+	<div id="article-heading" class="panel-heading">
+		<button type="submit" data-read="{{unsaved}}" id="unsave-article" data-id="{{_id}}" class="btn-sm btn-danger pull-right"> <span>Saved</span>
+		</button>
 		
-		<button type="submit" data-read="{{unsaved}}" id="unsave-article" data-id="{{_id}}" class="btn-sm btn-danger pull-right"><span>Saved</span></button>
-		
-		<button type="submit" id="add-note" data-id="{{_id}}" class="btn-sm btn-danger pull-right" data-toggle="modal" data-target="#myModal{{this._id}}">Add Comment</button>
-		<a href="{{link}}"> {{title}}</a>
+		<button type="submit" id="add-note" data-id="{{_id}}" class="btn-sm btn-default pull-right" data-toggle="modal" data-target="#myModal{{this._id}}">Add Comment
+		</button>
+
+		<a href="{{link}}" target="_blank">{{title}}</a>
 		
 	</div>
 	<div class="panel-body">
 		{{summary}}
-		
+		<div class="date">Date Added: {{userCreated}}</div>
 	</div>
 </div>
 {{/unless}}
-
 
 
 <!-- Modal content-->
@@ -29,25 +29,31 @@
 			</div>
 			<div class="modal-body">
 				<div class="show-notes">
+					<div class="notes-container"></div>
+				
 					{{#each note}}
-					<p>{{this/comment}}</p>
-					
+					<div class="comment-container"><button class="btn btn-xs btn-danger"action="/delete-note" method="POST" id="delete-note" data-id=" {{_id}}">X</button>{{comment}} </div>
 					{{else}}
-					<p class="empty">No Comments</p>
+					<h2 class="empty">No Comments</h2>
 					{{/each}}
+
 				</div>
 				
-		<form>
+			</div>
+			
+			<form>
 				<div class="form-group">
 					<label for="bodyinput">Comment</label>
 					<textarea type="text" class="form-control" rows="3" id="bodyinput{{_id}}"> </textarea>
-				</div>
-				<button type="submit" class="btn btn-default" data-id="{{_id}}" id="savenote">Submit</button>
 
-		</form>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
+				<div class="form-group">
+				<button type="submit" class="btn btn-default" data-id="{{_id}}" id="savenote">Submit</button>
+				</div>
+				
+			</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
