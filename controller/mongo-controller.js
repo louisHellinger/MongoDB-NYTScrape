@@ -9,7 +9,8 @@
   // Scrape Route for getting articles, save each result in an object and push to the page
   router.get("/scrape", function(req, res) {
 
-    axios.get("https://www.nytimes.com/section/us").then(function(response) {
+    axios.get("https://www.nytimes.com/section/us")
+    .then(function(response) {
 
       var $ = cheerio.load(response.data);
 

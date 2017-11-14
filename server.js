@@ -46,7 +46,7 @@ mongoose.Promise = Promise;
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/NYTScraper";
 
-mongoose.connect(MONGODB_URI , {
+mongoose.connect(MONGODB_URI, {
   useMongoClient: true
 });
 
