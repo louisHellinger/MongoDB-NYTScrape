@@ -13,8 +13,11 @@ Comments can be deleted as well.
 - HTML
 - CSS
 - Bootstrap
+- Javascript
+- jquery
 - Responsive Design
+- Handlebars
 - MongoDB
 
 ## Developer
-Louis louisHellinger
+Louis Hellinger
