@@ -157,8 +157,7 @@
     db.Article.find({})
       .populate("note")
       .then(function(dbNote) {
-        // res.json(dbNote[0].note[0].comment); 
-        //console.log(dbNote.note[0].comment);
+
       })
       .catch(function(err) {
 
@@ -174,8 +173,7 @@
     db.Note.deleteOne({
       _id: req.params.id
     }).then(function(dbNote) {
-      // console.log("dbNote before");
-      // console.log(dbNote);
+
       res.JSON(dbNote);
 
     });
@@ -208,7 +206,7 @@
         }).catch(function(err) {
        if (err) {
             return res.send();
-          } 
+          }
 });
 
     });
@@ -244,7 +242,7 @@
     }).catch(function(err) {
        if (err) {
             return res.send();
-          } 
+          }
 });
   });
 
@@ -270,7 +268,7 @@
       }).catch(function(err) {
        if (err) {
             return res.send();
-          } 
+          }
 });
   });
 
