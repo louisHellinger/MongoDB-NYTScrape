@@ -8,7 +8,7 @@ Comments can be deleted as well.
 ## App Link
 [New York Times Article Scraper](https://webnewsscraper.herokuapp.com/)
 
-##Languages/Resources Used
+## Languages/Resources Used
 
 - HTML
 - CSS
